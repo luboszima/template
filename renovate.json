@@ -1,0 +1,53 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Renovate configuration for the template repository.",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":enablePreCommit"
+  ],
+  "labels": ["dependencies", "renovate"],
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 3,
+  "semanticCommits": "enabled",
+  "packageRules": [
+    {
+      "description": "GitHub Actions - all updates auto-merge",
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions",
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true,
+      "pinDigests": true,
+      "commitMessagePrefix": "chore(actions):",
+      "labels": ["dependencies", "github-actions", "automerge"]
+    },
+    {
+      "description": "mise tools - all updates auto-merge",
+      "matchManagers": ["mise"],
+      "groupName": "mise tools",
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true,
+      "commitMessagePrefix": "chore(mise):",
+      "labels": ["dependencies", "mise", "tools", "automerge"]
+    },
+    {
+      "description": "pre-commit hooks - all updates auto-merge",
+      "matchManagers": ["pre-commit"],
+      "groupName": "pre-commit hooks",
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true,
+      "commitMessagePrefix": "chore(prek):",
+      "labels": ["dependencies", "pre-commit", "hooks", "automerge"]
+    }
+  ],
+  "pre-commit": {
+    "enabled": true
+  },
+  "mise": {
+    "enabled": true
+  }
+}

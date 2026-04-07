@@ -1,0 +1,10 @@
+# mise configuration file
+# https://mise.jdx.dev/configuration.html
+
+[tools]
+terraform = "1.14.8"
+terragrunt = "0.99.5"
+task = "3.48.0"
+prek = "0.3.1"
+shellcheck = "0.11.0"
+actionlint = "1.7.12"

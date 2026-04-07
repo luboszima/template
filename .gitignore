@@ -1,0 +1,17 @@
+# Environment files
+.env
+.env.*
+!.env.sample
+!.env.*.sample
+!.env.example
+
+# Terraform and Terragrunt
+.terraform/
+.terragrunt-cache/
+
+# Local editor and OS files
+.DS_Store
+.idea/
+
+# Local task state
+tasks/
