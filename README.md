@@ -12,11 +12,11 @@ reviewable PRs.
 `mise` pins tool versions for the repository. This avoids using whatever version is installed
 globally and helps keep the project on versions that were already tested and accepted.
 
-### Task
+### mise tasks
 
-`Taskfile.yml` keeps important project commands in one place. This helps new developers find
-how to build, test, validate, or maintain the project even when older docs are out of date.
-Run `task --list` to see the available commands.
+`mise` also defines the common project commands through `mise tasks`. This keeps the tool
+versions and the task runner in one config file, which makes the repo easier to maintain and
+reduces duplication. Run `mise tasks ls` to see the available commands.
 
 ### prek
 
@@ -50,5 +50,5 @@ mise install
 Run all hooks locally:
 
 ```sh
-task prek
+mise run prek
 ```
